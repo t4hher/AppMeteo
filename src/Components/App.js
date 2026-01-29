@@ -21,7 +21,7 @@ function App() {
   const isDay=weather.current.is_day===1;
 
   return (
-    <Box>{isDay?setLightMode():setDarkMode()}</Box>
+    <Box isDay={isDay}>{isDay?setLightMode():setDarkMode()}</Box>
   );
 }
 

@@ -12,7 +12,7 @@ export function setLightMode(){
   };
   
 
-export default function Box(){
+export default function Box({isDay}){
     const { weather, city, error, loading, }=useSelector((state)=>state.meteo);
     function themeToggle(e){
       if(e.target.checked) setDarkMode();else setLightMode();
@@ -24,7 +24,7 @@ export default function Box(){
     return <div className="app">
     <div className="themetoggle">
     <label style={{ cursor: 'pointer' }}>
-      <input type="checkbox" onChange={themeToggle}/>
+      <input type="checkbox" onChange={themeToggle} checked={!isDay}/>
       <div className="check">
         <img src={`https://img.icons8.com/?size=100&id=9313&format=png&color=7f7f7f`} id="sun"/>
         <img src={`https://img.icons8.com/?size=100&id=bv1XgSVyIgCb&format=png&color=7f7f7f`} id="moon"/>
