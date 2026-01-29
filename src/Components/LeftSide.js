@@ -55,8 +55,8 @@ export default function LeftSide(){
             
         </div>
         <div className="others">
-            <div className="wind"><img src={`https://img.icons8.com/?size=100&id=NFarzlQfH1Dz&format=png&color=${isNightMode?"ffffff":"000000"}`}/> {weather.current.wind_speed_10m}km/h</div>
-            <div className="humidity"><img src={`https://img.icons8.com/?size=100&id=mS88fu3JtfrS&format=png&color=${isNightMode?"ffffff":"000000"}`}/> {weather.current.relative_humidity_2m}%</div>
+            <div className="wind"><img src={`https://img.icons8.com/?size=100&id=NFarzlQfH1Dz&format=png&color=${!isNightMode?"ffffff":"000000"}`}/> {weather.current.wind_speed_10m}km/h</div>
+            <div className="humidity"><img src={`https://img.icons8.com/?size=100&id=mS88fu3JtfrS&format=png&color=${!isNightMode?"ffffff":"000000"}`}/> {weather.current.relative_humidity_2m}%</div>
         </div>
     </div>
     <div className="status">{getWeatherStatus(weather.current.weather_code)}</div>

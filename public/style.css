@@ -31,30 +31,33 @@
 body{
     background-color: var(--bodybg);
     margin: 0;
-    min-height: 100vh;
     font-family: 'Sreda', sans-serif;
 }
 *{
     font-family: 'Sreda', sans-serif;
 }
-.app{
+.app {
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Change from center to top-aligned */
     align-items: center;
-    min-height: 100vh;
+
+    padding: 20px 0;            /* Adds breathing room at top and bottom */
 }
 .loading{
     display: none;
     visibility: hidden;
 }
 .themetoggle {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    /* Remove position: absolute, top, and right */
     display: flex;
-    align-items: center;
+    justify-content: flex-end; /* Keeps toggle on the right */
+    width: 100%;               /* Needed to push it to the right edge */
+    max-width: 1200px;         /* Match this to your box width + padding */
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;       /* This creates the vertical gap you want */
 }
 
 input[type="checkbox"] {
@@ -445,6 +448,9 @@ input[type="checkbox"]:checked ~ .check::before {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+    .themetoggle {
+        margin-bottom: 10px;
     }
     .box{
         flex-direction: column;
