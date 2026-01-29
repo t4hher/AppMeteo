@@ -1,0 +1,706 @@
+@import url('https://fonts.cdnfonts.com/css/sreda');
+
+:root{
+    --bodybg: #f4f3ef;
+    --leftboxbg: #efeee8;
+    --rightboxbg: #fafafa;
+
+    --leftsidebg: #fafafa;
+    --rightsidebg: #efeee8;
+    --linecolor: #808080;
+    --bordercolor: #a8a6a6;
+    --borderhovercolor : black;
+    --colortxt:black;
+}
+[data-theme="dark"] {
+    --bodybg: #2f2f32;
+    --leftboxbg: #050505;
+    --rightboxbg: #101117;
+
+    --leftsidebg: #101117;
+    --rightsidebg: #050505;
+    --linecolor: #7f7f7f;
+    --bordercolor: #575959;
+    --borderhovercolor : white;
+    --colortxt:white;
+}
+* {
+    color: var(--colortxt);
+    transition: all 0.3s ease-in-out;
+}
+body{
+    background-color: var(--bodybg);
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Sreda', sans-serif;
+}
+*{
+    font-family: 'Sreda', sans-serif;
+}
+.app{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.loading{
+    display: none;
+    visibility: hidden;
+}
+.themetoggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.check {
+    display: block;
+    height: 30px;
+    width: 60px;
+    background-color: #101117;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.check::before {
+    content: "";
+    display: block;
+    position: relative;
+    height: 26px;
+    width: 26px;
+    background-color: #7f7f7f;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease-in-out;
+}
+input[type="checkbox"]:checked ~ .check{
+    background-color: #efeee8;
+}
+input[type="checkbox"]:checked ~ .check::before {
+    transform: translateX(30px);
+    background-color: #7f7f7f;
+}
+.check img{
+    position: absolute;
+    width: 26px;
+}
+.check #sun{
+    top: 2px;
+    left: 2px;
+}
+.check #moon{
+    top: 2px;
+    right: 2px;
+}
+
+
+.box{
+    background-color: var(--leftsidebg);
+    border-radius: 30px;
+    display: flex;
+    padding: 0 0;
+}
+.box .rightSide{
+    width: 400px;
+    background-color: var(--rightsidebg);
+    border-radius: 0 30px 30px 0;
+    padding: 20px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.rightSide .greating{
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+.rightSide .time{
+    font-size: 30px;
+    font-weight: bold;
+}
+.miniWeather{
+    margin: 20px 0;
+}
+.summary{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.summary .temp{
+    font-size: 40px;
+}
+.vertLine{
+    background-color: var(--linecolor);
+    width: 1px;
+    height: 40px;
+}
+.others{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.others div{
+    font-size: 15px;
+}
+.summary .others div img{
+    width: 15px;
+}
+.status{
+    font-size: 30px;
+    color: var(--linecolor);
+
+}
+.miniWeather .status{
+    margin-top: 5px;
+}
+.horiLine{
+    width: 70%;
+    height: 2px;
+    background-color: var(--linecolor);
+}
+
+
+
+.daily{
+    margin-top: 25px;
+    width: 85%;
+}
+.daily .heading{
+    font-size: 25px;
+    margin-bottom: 20px;
+    
+}
+.forcasts{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.forcast{
+    background-color: var(--rightboxbg);
+    border: var(--bordercolor) solid 2px;
+    border-radius: 10px;
+    width: 30%;
+    padding: 5px 2px;
+    transition: 0.3s all ease;
+}
+.forcast:hover{
+    border: var(--borderhovercolor) solid 2px;
+    transform: scale(1.05);
+    cursor:default ;
+}
+.forcast div{
+    margin-bottom: 5px;
+}
+.forcast .day{
+    font-weight: bold;
+}
+.forcast .temp{
+    font-size: 25px;
+}
+.forcast .status{
+    font-size: 15px;
+}
+
+
+@media screen and (max-width: 1024px){
+    .box .rightSide{
+        width: 300px;
+    }
+    .rightSide .greating{
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+    .rightSide .time{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .miniWeather{
+        margin: 10px 0;
+    }
+    .summary{
+        gap: 10px;
+
+    }
+    .summary .temp{
+        font-size: 30px;
+    }
+    .vertLine{
+        width: 1px;
+        height: 30px;
+    }
+    .others div{
+        font-size: 12px;
+    }
+    .summary .others div img{
+        width: 12px;
+    }
+    .status{
+        font-size: 20px;
+    
+    }
+    .miniWeather .status{
+        margin-top: 5px;
+    }
+    .horiLine{
+        width: 70%;
+        height: 2px;
+    }
+    .daily{
+        margin-top: 15px;
+        width: 100%;
+    }
+    .daily .heading{
+        font-size: 20px;
+        margin-bottom: 10px;
+        
+    }
+    .forcasts{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+    .forcast{
+        background-color: var(--rightboxbg);
+        border: var(--bordercolor) solid 2px;
+        border-radius: 10px;
+        width: 80px;
+        padding: 0px 2px;
+        transition: 0.3s all ease;
+    }
+    .forcast .temp{
+        font-size: 22px;
+    }
+    .forcast .status{
+        font-size: 12px;
+    }
+    .horiLine{
+        height: 1px;
+    }
+    
+
+    .box .leftSide{
+        width: 500px;
+        padding: 20px 30px;
+    }
+    .header{
+        width: 100%;
+    }
+    .header .city{
+        margin-left: 10px;
+        font-size: 15px;
+    }
+    .leftSide .header .city .styled-select{
+        font-family: 'Sreda', sans-serif;
+        font-size: 15px;
+        border-radius: 20px;
+        padding: 12px 15px;
+    }
+    .leftSide .header .day{
+        font-size: 15px;
+        border: var(--bordercolor) solid 2px;
+        background-color: var(--leftboxbg);
+        border-radius: 25px;
+        padding: 12px 30px;
+        cursor: default;
+    }
+    .leftSide .header .date{
+        font-size: 15px;
+        border: var(--bordercolor) solid 2px;
+        background-color: var(--leftboxbg);
+        border-radius: 25px;
+        padding: 12px 15px;
+        cursor: default;
+    }
+    .leftSide .weather{
+        margin-top: 10px;
+    }
+    .leftSide .weather .general .temp{
+        font-size: 130px;
+    }
+    .box .leftSide .status{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .box .leftSide .heading{
+        font-size: 20px;
+        margin-top: 15px;
+    }
+    .weather .others{
+        margin-left: 25px;
+    }
+    .leftSide .weather .others div img{
+        width: 20px;
+    }
+    .hourly .hour .status{
+        font-size: 12px;
+        margin: 0;
+    }
+    .hour .day{
+        font-weight: bold;
+    }
+    .hourly .hour .temp{
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    .box .leftSide{
+        width: 350px;
+    }
+    .box .rightSide{
+        width: 250px;
+    }
+    .forcast{
+        background-color: var(--rightboxbg);
+        border: var(--bordercolor) solid 2px;
+        border-radius: 10px;
+        width: 60px;
+        padding: 0px 2px;
+        transition: 0.3s all ease;
+    }
+    .forcast .temp{
+        font-size: 22px;
+    }
+    .forcast .status{
+        font-size: 10px;
+    }
+
+
+    .leftSide .header .city .styled-select{
+        font-family: 'Sreda', sans-serif;
+        font-size: 10px;
+        border-radius: 20px;
+        padding: 12px 15px;
+    }
+    .leftSide .header .day{
+        font-size: 10px;
+        border: var(--bordercolor) solid 2px;
+        background-color: var(--leftboxbg);
+        border-radius: 25px;
+        padding: 12px 20px;
+        cursor: default;
+    }
+    .leftSide .header .date{
+        font-size: 10px;
+        border: var(--bordercolor) solid 2px;
+        background-color: var(--leftboxbg);
+        border-radius: 25px;
+        padding: 12px 15px;
+        cursor: default;
+    }
+    .leftSide .weather .general .temp{
+        font-size: 80px;
+    }
+    .box .leftSide .status{
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .box .leftSide .heading{
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .weather .others{
+        margin-left: 25px;
+    }
+    .leftSide .weather .others div img{
+        width: 15px;
+    }
+    .hourly .hour .status{
+        font-size: 12px;
+        margin: 0;
+    }
+    .hour .day{
+        font-weight: bold;
+    }
+    .hourly .hour .temp{
+        font-size: 17px;
+    }
+    .hourly .hour{
+        min-width: 70px;
+    }
+    .leftSide .hourly{
+        gap:5px
+    }
+}
+
+
+@media all and (max-width: 426px){
+    #root{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .box{
+        flex-direction: column;
+        min-height: none;
+        padding: 0;
+        height: 400px;
+    }
+    .box .leftSide{
+        width: 300px;
+    }
+    .box .rightSide{
+        width: 300px;
+        border-radius: 0px 0px 30px 30px;
+        padding: 20px 30px;
+    }
+    .leftSide .header .city {
+        padding: 0px 0px;
+
+    }
+    .leftSide .header .day{
+        font-size: 8px;
+        border: var(--bordercolor) solid 2px;
+        background-color: var(--leftboxbg);
+        border-radius: 25px;
+        cursor: default;
+    }
+    .leftSide .header .date{
+        font-size: 8px;
+        border: var(--bordercolor) solid 2px;
+        background-color: var(--leftboxbg);
+        border-radius: 25px;
+
+        cursor: default;
+    }
+    .leftSide .weather .general .temp{
+        font-size: 50px;
+    }
+    .box .leftSide .status{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .box .leftSide .heading{
+        font-size: 15px;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    .weather .others{
+        margin-left: 15px;
+    }
+    .leftSide .weather .others div img{
+        width: 15px;
+    }
+    .hourly .hour .status{
+        font-size: 12px;
+        margin: 0;
+    }
+    .hour .day{
+        font-weight: bold;
+    }
+    .hourly .hour .temp{
+        font-size: 15px;
+    }
+
+
+    .forcasts{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+    .forcast{
+        background-color: var(--rightboxbg);
+        border: var(--bordercolor) solid 2px;
+        border-radius: 10px;
+        width: 70px;
+        padding: 0px 2px;
+        transition: 0.3s all ease;
+    }
+    .forcast .temp{
+        font-size: 22px;
+    }
+    .forcast .status{
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width: 376px){
+    .box .leftSide{
+        width: 250px;
+    }
+    .box .rightSide{
+        width: 250px;
+    }
+    .leftSide .header .day{
+        font-size: 6px;
+        border: var(--bordercolor) solid 2px;
+        background-color: var(--leftboxbg);
+        border-radius: 25px;
+        cursor: default;
+    }
+    .leftSide .header .date{
+        font-size: 6px;
+        border: var(--bordercolor) solid 2px;
+        background-color: var(--leftboxbg);
+        border-radius: 25px;
+
+        cursor: default;
+    }
+    .leftSide .header .city .styled-select{
+        font-family: 'Sreda', sans-serif;
+        font-size: 7px;
+        border-radius: 20px;
+        padding: 12px 15px;
+    }
+}
+
+
+
+
+.leftSide{
+    width: 800px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .city{
+    margin-left: 10px;
+    font-size: 25px;
+}
+.header .city .styled-select{
+    font-family: 'Sreda', sans-serif;
+    font-size: 25px;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.header .day{
+    font-size: 20px;
+    border: var(--bordercolor) solid 2px;
+    background-color: var(--leftboxbg);
+    border-radius: 25px;
+    padding: 12px 30px;
+    cursor: default;
+}
+.header .date{
+    font-size: 20px;
+    border: var(--bordercolor) solid 2px;
+    background-color: var(--leftboxbg);
+    border-radius: 25px;
+    padding: 12px 15px;
+    cursor: default;
+} 
+.styled-select {
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    background-color: var(--leftboxbg);
+    border: 2px solid var(--bordercolor);
+    border-radius: 12px;
+    cursor: pointer;
+    outline: none;
+}
+.header div:hover{
+    transform: scale(1.05);
+}
+
+.weather{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+.weather .general{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.weather .general .temp{
+    font-size: 200px;
+    line-height: 1;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    transition: 0.3s ease-in-out all;
+    cursor: default;
+}
+.weather .general .temp:hover{
+    transform: scale(1.05);
+}
+.leftSide .status{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.leftSide .heading{
+    font-size: 25px;
+    margin-top: 20px;
+}
+.weather .others{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+}
+.weather .others div{
+    display: flex;
+    align-items: center;
+}
+.weather .others div img{
+    margin-right: 5px;
+    width: 25px;
+}
+
+
+
+.hourly{
+    width: 85%;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    box-shadow: 
+    inset 10px 0 8px -8px rgba(0, 0, 0, 0.5), 
+    inset -10px 0 8px -8px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 10px;
+    scrollbar-width: thin;
+}
+.hour{
+    text-align: center;
+    border: var(--bordercolor) solid 2px;
+    border-radius: 10px;
+    padding: 5px 0;
+    min-width: 90px;
+    transition: 0.5s all ease;
+}
+.hour:hover{
+    border: var(--borderhovercolor) solid 2px;
+    transform: scale(1.05);
+    cursor:default ;
+}
+
+.hour .day{
+    font-weight: bold;
+}
+.hour .temp{
+    font-size: 25px;
+}
+.hour .status{
+    font-size: 15px;
+    margin: 0;
+}
