@@ -14,7 +14,7 @@ A modern, responsive weather application built with **React** and **Redux Toolki
 * **State Management:** Redux Toolkit (Slices & Async Thunks)
 * **Styling:** Vanilla CSS (Custom Variables/Theming)
 * **Deployment:** GitHub Pages
-* **API:** WeatherAPI / OpenWeather (via Axios)
+* **API: OpenWeather (via Axios)
 
 ## 🛠️ Installation & Setup
 1. Clone the repo:
